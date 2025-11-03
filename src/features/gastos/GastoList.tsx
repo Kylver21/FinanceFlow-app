@@ -26,7 +26,6 @@ export const GastoList: React.FC = () => {
       try {
         await deleteGasto(id);
       } catch (error) {
-        console.error('Error deleting gasto:', error);
       }
     }
   };

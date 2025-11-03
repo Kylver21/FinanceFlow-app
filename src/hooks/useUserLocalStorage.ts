@@ -16,7 +16,6 @@ export function useUserLocalStorage<T>(key: string, initialValue: T) {
       const item = window.localStorage.getItem(userKey);
       return item ? JSON.parse(item) : initialValue;
     } catch (error) {
-      console.error(`Error loading ${userKey} from localStorage:`, error);
       return initialValue;
     }
   });
@@ -31,7 +30,6 @@ export function useUserLocalStorage<T>(key: string, initialValue: T) {
         setStoredValue(initialValue);
       }
     } catch (error) {
-      console.error(`Error loading ${userKey} from localStorage:`, error);
       setStoredValue(initialValue);
     }
   }, [userKey, user?.id]);
@@ -42,7 +40,6 @@ export function useUserLocalStorage<T>(key: string, initialValue: T) {
       setStoredValue(valueToStore);
       window.localStorage.setItem(userKey, JSON.stringify(valueToStore));
     } catch (error) {
-      console.error(`Error saving ${userKey} to localStorage:`, error);
     }
   };
 

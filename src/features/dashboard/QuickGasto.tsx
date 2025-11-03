@@ -87,7 +87,6 @@ export const QuickGasto: React.FC = () => {
       // Reset parcial: dejamos categoría para repetir rápido
       setForm((prev) => ({ ...prev, monto: '', descripcion: '', veces: 1 }));
     } catch (err) {
-      console.error('Error adding quick gasto:', err);
     } finally {
       setLoading(false);
     }

@@ -18,10 +18,6 @@ export const GastoForm: React.FC<GastoFormProps> = ({ onSuccess }) => {
   });
 
   const categoriasGasto = categorias.filter((c) => c.tipo === 'gasto');
-  
-  console.log('📊 Total categorías:', categorias.length);
-  console.log('💸 Categorías de gasto:', categoriasGasto.length, categoriasGasto);
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
@@ -41,8 +37,6 @@ export const GastoForm: React.FC<GastoFormProps> = ({ onSuccess }) => {
         es_fijo: formData.es_fijo,
         metodo_pago: formData.metodo_pago,
       };
-
-      console.log('Enviando gasto:', gastoData);
       await addGasto(gastoData);
       
       // Resetear formulario
@@ -57,7 +51,6 @@ export const GastoForm: React.FC<GastoFormProps> = ({ onSuccess }) => {
       
       onSuccess();
     } catch (error) {
-      console.error('Error creating gasto:', error);
       alert('Error al guardar el gasto. Por favor intenta de nuevo.');
     } finally {
       setLoading(false);
@@ -117,7 +110,6 @@ export const GastoForm: React.FC<GastoFormProps> = ({ onSuccess }) => {
           <select
             value={formData.categoria_id}
             onChange={(e) => {
-              console.log('Categoría seleccionada:', e.target.value);
               setFormData({ ...formData, categoria_id: e.target.value });
             }}
             className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none appearance-none bg-white text-gray-900 cursor-pointer"

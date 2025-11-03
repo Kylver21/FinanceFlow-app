@@ -18,10 +18,6 @@ export const IngresoForm: React.FC<IngresoFormProps> = ({ onSuccess }) => {
   });
 
   const categoriasIngreso = categorias.filter((c) => c.tipo === 'ingreso');
-
-  console.log('📊 Total categorías:', categorias.length);
-  console.log('💰 Categorías de ingreso:', categoriasIngreso.length, categoriasIngreso);
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
@@ -41,8 +37,6 @@ export const IngresoForm: React.FC<IngresoFormProps> = ({ onSuccess }) => {
         es_recurrente: formData.frecuencia !== 'una_vez',
         frecuencia: formData.frecuencia !== 'una_vez' ? (formData.frecuencia as any) : null,
       };
-
-      console.log('Enviando ingreso:', ingresoData);
       await addIngreso(ingresoData);
       
       // Resetear formulario
@@ -57,7 +51,6 @@ export const IngresoForm: React.FC<IngresoFormProps> = ({ onSuccess }) => {
       
       onSuccess();
     } catch (error) {
-      console.error('Error creating ingreso:', error);
       alert('Error al guardar el ingreso. Por favor intenta de nuevo.');
     } finally {
       setLoading(false);
@@ -159,7 +152,6 @@ export const IngresoForm: React.FC<IngresoFormProps> = ({ onSuccess }) => {
           <select
             value={formData.categoria_id}
             onChange={(e) => {
-              console.log('Categoría seleccionada:', e.target.value);
               setFormData({ ...formData, categoria_id: e.target.value });
             }}
             className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none appearance-none bg-white text-gray-900 cursor-pointer"

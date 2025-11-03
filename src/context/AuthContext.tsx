@@ -55,7 +55,6 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 
       return { error: null };
     } catch (error: any) {
-      console.error('Error signing up:', error);
       return { error };
     }
   };
@@ -71,7 +70,6 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 
       return { error: null };
     } catch (error: any) {
-      console.error('Error signing in:', error);
       return { error };
     }
   };
@@ -87,7 +85,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
       setUser(null);
       setSession(null);
     } catch (error) {
-      console.error('Error signing out:', error);
+      // Error silencioso en logout
     }
   };
 

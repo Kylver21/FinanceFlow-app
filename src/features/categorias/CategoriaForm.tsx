@@ -31,7 +31,6 @@ export const CategoriaForm: React.FC<CategoriaFormProps> = ({ onSuccess }) => {
       onSuccess();
       setFormData({ nombre: '', tipo: 'gasto', icono: 'Circle', color: '#6366f1' });
     } catch (err) {
-      console.error('Error creating categoria:', err);
     } finally {
       setLoading(false);
     }

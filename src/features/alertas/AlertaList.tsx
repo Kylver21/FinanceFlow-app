@@ -22,7 +22,6 @@ export const AlertaList: React.FC = () => {
       try {
         await deleteAlerta(id);
       } catch (error) {
-        console.error('Error deleting alerta:', error);
       }
     }
   };
@@ -31,7 +30,6 @@ export const AlertaList: React.FC = () => {
     try {
       await updateAlerta(id, { activa: !activa });
     } catch (error) {
-      console.error('Error updating alerta:', error);
     }
   };
 

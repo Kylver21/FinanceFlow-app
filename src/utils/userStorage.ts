@@ -9,7 +9,6 @@ export const getUserLocalStorage = (userId: string, key: string): string | null 
   try {
     return localStorage.getItem(`${key}_${userId}`);
   } catch (error) {
-    console.error('Error reading from localStorage:', error);
     return null;
   }
 };
@@ -21,7 +20,6 @@ export const setUserLocalStorage = (userId: string, key: string, value: string):
   try {
     localStorage.setItem(`${key}_${userId}`, value);
   } catch (error) {
-    console.error('Error writing to localStorage:', error);
   }
 };
 
@@ -32,7 +30,6 @@ export const removeUserLocalStorage = (userId: string, key: string): void => {
   try {
     localStorage.removeItem(`${key}_${userId}`);
   } catch (error) {
-    console.error('Error removing from localStorage:', error);
   }
 };
 
@@ -47,10 +44,7 @@ export const clearUserLocalStorage = (userId: string): void => {
     userKeys.forEach(key => {
       localStorage.removeItem(key);
     });
-    
-    console.log(`Cleared ${userKeys.length} localStorage items for user ${userId}`);
   } catch (error) {
-    console.error('Error clearing user localStorage:', error);
   }
 };
 
@@ -66,9 +60,6 @@ export const clearAllExceptKeys = (keysToKeep: string[] = []): void => {
         localStorage.removeItem(key);
       }
     });
-    
-    console.log(`Cleared localStorage, kept ${keysToKeep.length} keys`);
   } catch (error) {
-    console.error('Error clearing localStorage:', error);
   }
 };

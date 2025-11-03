@@ -56,7 +56,6 @@ export const Alertas: React.FC = () => {
         ultima_alerta: null,
       });
     } catch (error) {
-      console.error('Error creating alerta:', error);
       alert('Error al crear la alerta');
     }
   };

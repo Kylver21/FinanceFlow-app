@@ -36,7 +36,6 @@ export const AlertaForm: React.FC<AlertaFormProps> = ({ onSuccess }) => {
       });
       onSuccess();
     } catch (error) {
-      console.error('Error creating alerta:', error);
     } finally {
       setLoading(false);
     }

@@ -26,7 +26,6 @@ export const IngresoList: React.FC = () => {
       try {
         await deleteIngreso(id);
       } catch (error) {
-        console.error('Error deleting ingreso:', error);
       }
     }
   };

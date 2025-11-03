@@ -19,7 +19,19 @@
 - 📱 **Diseño Responsive**: Optimizado para móviles y desktop
 - 🎨 **UI Moderna**: Interfaz limpia con Tailwind CSS
 
-## 🚀 Demo
+## � Documentación
+
+**🎯 EMPIEZA AQUÍ si es tu primera vez:**
+- 📄 **[RESUMEN_RAPIDO.md](RESUMEN_RAPIDO.md)** - Vista general (5 min)
+- ✅ **[CHECKLIST_IMPLEMENTACION.md](CHECKLIST_IMPLEMENTACION.md)** - Guía paso a paso (15 min)
+- 📖 **[IMPLEMENTACION_SUPABASE.md](IMPLEMENTACION_SUPABASE.md)** - Documentación completa (30 min)
+
+**Otros recursos:**
+- 🏗️ **[ARQUITECTURA.md](ARQUITECTURA.md)** - Diagramas y estructura técnica
+- 🔧 **[LOCALSTORAGE_FIX.md](LOCALSTORAGE_FIX.md)** - Fix del bug multi-usuario
+- 🚀 **[SETUP_GUIDE.md](SETUP_GUIDE.md)** - Deploy a Vercel
+
+## �🚀 Demo
 
 [Ver Demo en Vercel](https://tu-app.vercel.app)
 

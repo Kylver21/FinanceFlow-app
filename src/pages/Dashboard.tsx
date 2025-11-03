@@ -104,7 +104,6 @@ export const Dashboard: React.FC = () => {
           await deleteGasto(id);
         }
       } catch (error) {
-        console.error(`Error deleting ${tipo}:`, error);
       }
     }
   };

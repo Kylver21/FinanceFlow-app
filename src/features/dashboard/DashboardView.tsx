@@ -159,7 +159,7 @@ export const DashboardView: React.FC = () => {
                       <Toggle
                         checked={g.es_fijo}
                         onChange={async (checked) => {
-                          try { await updateGasto(g.id, { es_fijo: checked }); } catch (e) { console.error(e); }
+                          try { await updateGasto(g.id, { es_fijo: checked }); } catch (e) { /* Error silenciado */ }
                         }}
                         label={g.es_fijo ? 'Fijo' : 'No fijo'}
                       />
@@ -238,7 +238,7 @@ export const DashboardView: React.FC = () => {
                             onClick={async () => {
                               try {
                                 await updateGasto((transaccion as any).id, { es_fijo: !(transaccion as any).es_fijo });
-                              } catch (e) { console.error(e); }
+                              } catch (e) { /* Error silenciado */ }
                             }}
                             className={`inline-flex items-center gap-1 text-xs px-2 py-1 rounded-full border ${
                               (transaccion as any).es_fijo

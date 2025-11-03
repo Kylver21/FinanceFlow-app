@@ -1,3 +1,4 @@
+# Logs
 logs
 *.log
 npm-debug.log*
@@ -6,11 +7,20 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Dependencies
 node_modules
+
+# Build output
 dist
 dist-ssr
 *.local
 
+# Environment variables
+.env
+.env.local
+.env.production
+
+# Editor directories and files
 .vscode/*
 !.vscode/extensions.json
 .idea
@@ -20,4 +30,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-.env
+
+# Temporary documentation
+LOCALSTORAGE_FIX.md
+CHECKLIST_IMPLEMENTACION.md
+EJEMPLOS_CODIGO.md
+SETUP_GUIDE.md
+RESUMEN_RAPIDO.md

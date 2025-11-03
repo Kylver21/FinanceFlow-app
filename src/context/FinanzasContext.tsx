@@ -40,7 +40,6 @@ export const FinanzasProvider: React.FC<{ children: ReactNode }> = ({ children }
       .order('nombre');
 
     if (error) {
-      console.error('Error fetching categorias:', error);
       return;
     }
 
@@ -54,7 +53,6 @@ export const FinanzasProvider: React.FC<{ children: ReactNode }> = ({ children }
       .order('fecha', { ascending: false });
 
     if (error) {
-      console.error('Error fetching ingresos:', error);
       return;
     }
 
@@ -68,7 +66,6 @@ export const FinanzasProvider: React.FC<{ children: ReactNode }> = ({ children }
       .order('fecha', { ascending: false });
 
     if (error) {
-      console.error('Error fetching gastos:', error);
       return;
     }
 
@@ -82,7 +79,6 @@ export const FinanzasProvider: React.FC<{ children: ReactNode }> = ({ children }
       .order('dia_cobro');
 
     if (error) {
-      console.error('Error fetching alertas:', error);
       return;
     }
 
@@ -101,7 +97,6 @@ export const FinanzasProvider: React.FC<{ children: ReactNode }> = ({ children }
       user_id: user.id
     }]);
     if (error) {
-      console.error('Error adding categoria:', error);
       throw error;
     }
     await fetchCategorias();
@@ -116,7 +111,6 @@ export const FinanzasProvider: React.FC<{ children: ReactNode }> = ({ children }
       .update(updates)
       .eq('id', id);
     if (error) {
-      console.error('Error updating categoria:', error);
       throw error;
     }
     await fetchCategorias();
@@ -125,7 +119,6 @@ export const FinanzasProvider: React.FC<{ children: ReactNode }> = ({ children }
   const deleteCategoria = async (id: string) => {
     const { error } = await supabase.from('categorias').delete().eq('id', id);
     if (error) {
-      console.error('Error deleting categoria:', error);
       throw error;
     }
     await fetchCategorias();
@@ -157,7 +150,6 @@ export const FinanzasProvider: React.FC<{ children: ReactNode }> = ({ children }
       .insert([{ ...ingreso, user_id: user.id }]);
 
     if (error) {
-      console.error('Error adding ingreso:', error);
       throw error;
     }
 
@@ -173,7 +165,6 @@ export const FinanzasProvider: React.FC<{ children: ReactNode }> = ({ children }
       .insert([{ ...gasto, user_id: user.id }]);
 
     if (error) {
-      console.error('Error adding gasto:', error);
       throw error;
     }
 
@@ -187,7 +178,6 @@ export const FinanzasProvider: React.FC<{ children: ReactNode }> = ({ children }
       .eq('id', id);
 
     if (error) {
-      console.error('Error updating gasto:', error);
       throw error;
     }
 
@@ -203,7 +193,6 @@ export const FinanzasProvider: React.FC<{ children: ReactNode }> = ({ children }
       .insert([{ ...alerta, user_id: user.id }]);
 
     if (error) {
-      console.error('Error adding alerta:', error);
       throw error;
     }
 
@@ -217,7 +206,6 @@ export const FinanzasProvider: React.FC<{ children: ReactNode }> = ({ children }
       .eq('id', id);
 
     if (error) {
-      console.error('Error deleting ingreso:', error);
       throw error;
     }
 
@@ -231,7 +219,6 @@ export const FinanzasProvider: React.FC<{ children: ReactNode }> = ({ children }
       .eq('id', id);
 
     if (error) {
-      console.error('Error deleting gasto:', error);
       throw error;
     }
 
@@ -245,7 +232,6 @@ export const FinanzasProvider: React.FC<{ children: ReactNode }> = ({ children }
       .eq('id', id);
 
     if (error) {
-      console.error('Error deleting alerta:', error);
       throw error;
     }
 
@@ -259,7 +245,6 @@ export const FinanzasProvider: React.FC<{ children: ReactNode }> = ({ children }
       .eq('id', id);
 
     if (error) {
-      console.error('Error updating alerta:', error);
       throw error;
     }
 

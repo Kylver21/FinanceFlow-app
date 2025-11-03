@@ -21,7 +21,6 @@ export const CategoriaList: React.FC = () => {
       try {
         await deleteCategoria(id);
       } catch (e) {
-        console.error('Error deleting categoria:', e);
       }
     }
   };
